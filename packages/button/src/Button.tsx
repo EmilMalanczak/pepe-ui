@@ -1,5 +1,6 @@
-export const Button = () => (
-	<button type="button">
-		test <div>dsad </div>
-	</button>
+export const Button = ({children}) => (
+	<button type="button"> 
+	  {children} 
+	 </button> 
 )
+    
