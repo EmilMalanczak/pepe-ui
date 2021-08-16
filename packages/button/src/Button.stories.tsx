@@ -1,22 +1,22 @@
 import { Button } from './Button'
 
 export default {
-	title: 'Example/butv2',
-	component: Button,
-	argTypes: {
-		backgroundColor: { control: 'color' }
-	}
+  title: 'Example/butv2',
+  component: Button,
+  argTypes: {
+    backgroundColor: { control: 'color' }
+  }
 }
 
-const Template = (args) => <Button {...args} />
+const Template = ({ children }) => <Button>{children}</Button>
 
 export const Primary = Template.bind({})
 Primary.args = {
-	primary: true,
-	label: 'Button'
+  children: 'Button'
 }
 
 export const Secondary = Template.bind({})
+
 Secondary.args = {
-	label: 'Button'
+  children: 'Button 2'
 }
