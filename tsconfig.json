@@ -14,12 +14,12 @@
 		"emitDeclarationOnly": true,
 		"declaration": true,
 		"jsx": "react-jsx",
+		"typeRoots": ["./node_modules/@types"]
 	},
 	"exclude": [
 		"node_modules",
 		"**/*.stories.tsx",		
 		"./packages/**/lib"		
 	], 
-	"typeRoots": ["./node_modules/@types"]
 }
  

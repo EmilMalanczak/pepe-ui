@@ -38,3 +38,8 @@ pids
 
 # Docker volumes
 data/
+
+
+# jest
+.jest-cache
+.jest-coverage
