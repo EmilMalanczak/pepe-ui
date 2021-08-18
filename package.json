@@ -8,7 +8,9 @@
   "build:js": "lerna exec --parallel --ignore=@pepe-ui/docs -- babel --root-mode upward --extensions .ts,.tsx src -d lib --ignore **/*.stories.tsx",
   "build": "yarn build:types && yarn build:js",
   "lint": "lerna exec --parallel -- eslint . --color --fix",
-  "test": "jest"
+  "test": "jest",
+  "commit": "git add . && npx git-cz",
+  "build-storybook": "lerna run build-storybook --scope=@pepe-ui/docs"
  },
  "devDependencies": {
   "@babel/cli": "^7.14.8",
@@ -30,6 +32,7 @@
   "babel-jest": "^27.0.6",
   "babel-loader": "^8.2.2",
   "babel-plugin-styled-components": "^1.13.2",
+  "chromatic": "^5.9.2",
   "commitizen": "^4.2.4",
   "eslint": "^7.32.0",
   "eslint-config-airbnb": "^18.2.1",
@@ -70,7 +73,7 @@
  },
  "lint-staged": {
   "*.{js,ts,jsx,tsx}": [
-   "eslint --color --fix",
+   "lerna exec --parallel -- eslint . --color --fix",
    "prettier --write"
   ]
  },

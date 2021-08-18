@@ -52,6 +52,7 @@
 		"no-undef": "off",
 		"import/no-extraneous-dependencies": "off"
 	},
+	"ignorePatterns": ["packages/**/lib"],
 	"settings": {
 		"react": {
 			"version": "detect"
