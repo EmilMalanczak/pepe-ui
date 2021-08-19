@@ -1,85 +1,86 @@
 {
- "name": "pepe-ui",
- "private": true,
- "scripts": {
-  "bootstrap": "lerna bootstrap --use-workspaces",
-  "dev": "lerna run --scope=@pepe-ui/docs dev",
-  "build:types": "lerna exec -- tsc --pretty -declarationDir lib",
-  "build:js": "lerna exec --parallel --ignore=@pepe-ui/docs -- babel --root-mode upward --extensions .ts,.tsx src -d lib --ignore **/*.stories.tsx",
-  "build": "yarn build:types && yarn build:js",
-  "lint": "lerna exec --ignore=@pepe-ui/docs -- eslint . --color --fix",
-  "test": "jest",
-  "commit": "git add . && npx git-cz",
-  "build-storybook": "lerna run build-storybook --scope=@pepe-ui/docs"
- },
- "devDependencies": {
-  "@babel/cli": "^7.14.8",
-  "@babel/core": "^7.15.0",
-  "@babel/preset-env": "^7.15.0",
-  "@babel/preset-react": "^7.14.5",
-  "@babel/preset-typescript": "^7.15.0",
-  "@commitlint/cli": "^13.1.0",
-  "@commitlint/config-conventional": "^13.1.0",
-  "@testing-library/jest-dom": "^5.14.1",
-  "@testing-library/react": "^12.0.0",
-  "@types/jest": "^27.0.1",
-  "@types/react": "^17.0.18",
-  "@types/react-dom": "^17.0.9",
-  "@types/styled-components": "^5.1.12",
-  "@typescript-eslint/eslint-plugin": "^4.29.1",
-  "@typescript-eslint/parser": "^4.29.1",
-  "babel-core": "7.0.0-bridge.0",
-  "babel-jest": "^27.0.6",
-  "babel-loader": "^8.2.2",
-  "babel-plugin-styled-components": "^1.13.2",
-  "chromatic": "^5.9.2",
-  "commitizen": "^4.2.4",
-  "eslint": "^7.32.0",
-  "eslint-config-airbnb": "^18.2.1",
-  "eslint-config-prettier": "^8.3.0",
-  "eslint-import-resolver-typescript": "^2.4.0",
-  "eslint-plugin-import": "^2.24.0",
-  "eslint-plugin-jsx-a11y": "^6.4.1",
-  "eslint-plugin-prettier": "^3.4.0",
-  "eslint-plugin-react": "^7.24.0",
-  "eslint-plugin-react-hooks": "^4.2.0",
-  "eslint-plugin-simple-import-sort": "^7.0.0",
-  "git-cz": "^4.7.6",
-  "husky": "^7.0.1",
-  "jest": "^27.0.6",
-  "lerna": "^4.0.0",
-  "lint-staged": "^11.1.1",
-  "prettier": "^2.3.2",
-  "react": "^17.0.2",
-  "react-dom": "^17.0.2",
-  "styled-components": "^5.3.0",
-  "stylelint": "^13.13.1",
-  "stylelint-config-prettier": "^8.0.2",
-  "stylelint-config-standard": "^22.0.0",
-  "stylelint-config-styled-components": "^0.1.1",
-  "stylelint-order": "^4.1.0",
-  "stylelint-processor-styled-components": "^1.10.0",
-  "ts-jest": "^27.0.5",
-  "ts-node": "^10.2.0",
-  "typescript": "^4.3.5"
- },
- "workspaces": [
-  "packages/*"
- ],
- "husky": {
-  "hooks": {
-   "pre-commit": "lint-staged"
+  "name": "pepe-ui",
+  "private": true,
+  "scripts": {
+    "bootstrap": "lerna bootstrap --use-workspaces",
+    "dev": "lerna run --scope=@pepe-ui/docs dev",
+    "build:types": "lerna exec -- tsc --pretty -declarationDir lib",
+    "build:js": "lerna exec --parallel --ignore=@pepe-ui/docs -- babel --root-mode upward --extensions .ts,.tsx src -d lib --ignore **/*.stories.tsx",
+    "build": "yarn build:types && yarn build:js",
+    "lint": "lerna exec --ignore=@pepe-ui/docs -- eslint . --color --fix",
+    "test": "jest",
+    "commit": "git add . && npx git-cz",
+    "build-storybook": "lerna run build-storybook --scope=@pepe-ui/docs",
+    "chromatic": "npx chromatic --project-token=13162aa08456 -d packages/docs/dist"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.15.0",
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@types/jest": "^27.0.1",
+    "@types/react": "^17.0.18",
+    "@types/react-dom": "^17.0.9",
+    "@types/styled-components": "^5.1.12",
+    "@typescript-eslint/eslint-plugin": "^4.29.1",
+    "@typescript-eslint/parser": "^4.29.1",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^27.0.6",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-styled-components": "^1.13.2",
+    "chromatic": "^5.9.2",
+    "commitizen": "^4.2.4",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.24.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "git-cz": "^4.7.6",
+    "husky": "^7.0.1",
+    "jest": "^27.0.6",
+    "lerna": "^4.0.0",
+    "lint-staged": "^11.1.1",
+    "prettier": "^2.3.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-order": "^4.1.0",
+    "stylelint-processor-styled-components": "^1.10.0",
+    "ts-jest": "^27.0.5",
+    "ts-node": "^10.2.0",
+    "typescript": "^4.3.5"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": [
+      "yarn lint",
+      "prettier --write"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
   }
- },
- "lint-staged": {
-  "*.{js,ts,jsx,tsx}": [
-   "yarn lint",
-   "prettier --write"
-  ]
- }, 
- "config": {
-  "commitizen": {
-   "path": "git-cz"
-  }
- }
 }
