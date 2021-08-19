@@ -1,14 +1,17 @@
 # Name of our action
-name: 'Chromatic'
+# Name of our action
 on: push
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Publish to Chromatic
       - uses: actions/checkout@v1
       - run: yarn
       - uses: chromaui/action@v1
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}
+          workingDir: packages/docs
+          exitZeroOnChanges: true
