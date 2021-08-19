@@ -7,7 +7,7 @@
   "build:types": "lerna exec -- tsc --pretty -declarationDir lib",
   "build:js": "lerna exec --parallel --ignore=@pepe-ui/docs -- babel --root-mode upward --extensions .ts,.tsx src -d lib --ignore **/*.stories.tsx",
   "build": "yarn build:types && yarn build:js",
-  "lint": "lerna exec --parallel -- eslint . --color --fix",
+  "lint": "lerna exec --ignore=@pepe-ui/docs -- eslint . --color --fix",
   "test": "jest",
   "commit": "git add . && npx git-cz",
   "build-storybook": "lerna run build-storybook --scope=@pepe-ui/docs"
@@ -73,7 +73,7 @@
  },
  "lint-staged": {
   "*.{js,ts,jsx,tsx}": [
-   "lerna exec --parallel -- eslint . --color --fix",
+   "yarn lint",
    "prettier --write"
   ]
  },

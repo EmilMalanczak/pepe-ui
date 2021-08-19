@@ -3,12 +3,20 @@ name: 'Chromatic'
 on: push
 
 jobs:
-  test:
+  deployment:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - run: yarn
+
+      - name: Install dependencies
+        run: yarn
+      
+      - name: Run tests
+        run: yarn test
+
       - uses: chromaui/action@v1
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}
+          workingDir: packages/docs
+          exitZeroOnChanges: true
