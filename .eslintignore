@@ -1,3 +1,14 @@
 dist
 lib
 *.d.ts
+
+.eslintrc.js
+.prettierrc.js
+.stylelintrc.js
+.huskyrc.js
+.babelrc.js
+.lintstagedrc.js 
+
+jest.config.js
+jest.config.base.js
+

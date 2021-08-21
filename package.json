@@ -9,6 +9,7 @@
   "build": "yarn build:types && yarn build:js",
   "lint": "lerna exec --ignore=@pepe-ui/docs -- eslint . --color --fix",
   "test": "jest",
+  "test:watch": "jest --watch",
   "commit": "git add . && npx git-cz",
   "build-storybook": "lerna run build-storybook --scope=@pepe-ui/docs"
  },
@@ -66,17 +67,6 @@
  "workspaces": [
   "packages/*"
  ],
- "husky": {
-  "hooks": {
-   "pre-commit": "lint-staged"
-  }
- },
- "lint-staged": {
-  "*.{js,ts,jsx,tsx}": [
-   "yarn lint",
-   "prettier --write"
-  ]
- },
  "config": {
   "commitizen": {
    "path": "git-cz"
