@@ -1,14 +1,15 @@
 {
 	"parser": "@typescript-eslint/parser",
 	"extends": [
-		"plugin:@typescript-eslint/recommended",
 		"plugin:prettier/recommended",
 		"plugin:jsx-a11y/recommended",
 		"plugin:import/recommended",  
-		"airbnb",
-		"plugin:react/recommended"
+		"plugin:react/recommended",
+		"airbnb", 
+		"plugin:@typescript-eslint/recommended",
+		"plugin:@typescript-eslint/eslint-recommended"
 	],
-	"parserOptions": {
+	"parserOptions": { 
 		"ecmaVersion": 2018,
 		"sourceType": "module"
 	},

@@ -1,0 +1,10 @@
+{
+	"name": "@pepe-ui/theme",
+	"version": "1.0.0",
+	"main": "lib/index.js",
+	"types": "lib/index.d.ts",
+	"module": "src/index.ts",
+	"scripts": {
+		"test": "cd ../../ && lerna exec --scope=@pepe-ui/theme -- jest --colors"
+	}  
+} 
