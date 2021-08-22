@@ -12,8 +12,8 @@ jobs:
         if: github.event.action == 'opened'
         with:
           project: pepe-ui
-          column: To do 
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          column: To do
+          repo-token: ${{ secrets.PROJECT_TOKEN }}
 
   issue_assigned:
     runs-on: ubuntu-latest
@@ -23,7 +23,7 @@ jobs:
         with:
           project: pepe-ui
           column: In progress
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.PROJECT_TOKEN }}
 
   issue_closed:
     runs-on: ubuntu-latest
@@ -33,4 +33,4 @@ jobs:
         with:
           project: pepe-ui
           column: Done
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.PROJECT_TOKEN }}
