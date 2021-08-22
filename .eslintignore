@@ -9,6 +9,6 @@ lib
 .babelrc.js
 .lintstagedrc.js 
 
-jest.config.js
-jest.config.base.js
+jest.config.ts
+jest.config.base.ts
 
