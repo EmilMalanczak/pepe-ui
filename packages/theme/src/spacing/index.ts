@@ -1,3 +1,3 @@
-export { generateSpacing } from './spacing'
+export { generateSpacing, spacing } from './spacing'
 
-export type { SpacingParser, SpacingValue, Spacing } from './spacing.types'
+export type { SpacingParser, SpacingValue, Spacing, SpacingArgs } from './spacing.types'

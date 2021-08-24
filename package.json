@@ -4,12 +4,12 @@
  "scripts": {
   "bootstrap": "lerna bootstrap --use-workspaces",
   "dev": "lerna run --scope=@pepe-ui/docs dev",
-  "build:types": "lerna exec -- tsc --pretty -declarationDir lib",
+  "build:types": "lerna exec -- tsc --pretty --declarationDir lib",
   "build:js": "lerna exec --parallel --ignore=@pepe-ui/docs -- babel --root-mode upward --extensions .ts,.tsx src -d lib --ignore **/*.stories.tsx",
   "build": "yarn build:types && yarn build:js",
   "lint": "lerna exec --ignore=@pepe-ui/docs -- eslint . --color --fix",
-  "test": "jest",
-  "test:watch": "jest --watch",
+  "test": "jest --color",
+  "test:watch": "jest --watch --color",
   "commit": "git add . && npx git-cz",
   "build-storybook": "lerna run build-storybook --scope=@pepe-ui/docs"
  },
