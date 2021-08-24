@@ -1,14 +1,12 @@
-import type { SpacingValue, SpacingParser, Spacing, SpacingArgLength } from './spacing.types'
+import type { SpacingValue, SpacingParser, Spacing } from './spacing.types'
 
 export const generateSpacing = (parser: SpacingParser): Spacing => {
   const cache = new Map()
 
   const transform = (value: SpacingValue): SpacingValue => {
-    if (!value) return ''
+    const isCustomProperty = typeof value !== 'number'
 
-    const isUnitless = typeof value === 'number'
-
-    if (!isUnitless) return value
+    if (isCustomProperty) return value
 
     // check if that value was already calculated
     // reduction of unnessesary calculations and memory use
@@ -27,10 +25,20 @@ export const generateSpacing = (parser: SpacingParser): Spacing => {
     return valueToCache
   }
 
-  return function spacing(...values: SpacingArgLength) {
+  return function spacing(...values) {
+    if (values.length === 0) {
+      return ''
+    }
+
     return values.reduce(
       (css, value, idx) => `${css}${idx !== 0 ? ' ' : ''}${transform(value)}`,
       ''
     ) as string
   }
 }
+
+// https://www.measurethat.net/Benchmarks/Show/11037/0/double-tilde-vs-mathfloor
+// eslint-disable-next-line no-bitwise
+const DEFAULT_PARSER: SpacingParser = (value) => `${~~(value * 4)}px`
+
+export const spacing = generateSpacing(DEFAULT_PARSER)

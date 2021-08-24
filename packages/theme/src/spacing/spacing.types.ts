@@ -9,6 +9,6 @@ type FixedSizeArray<T, N extends number> = N extends 0
       length: N
     } & ReadonlyArray<T>
 
-export type SpacingArgLength = FixedSizeArray<SpacingValue, 1 | 2 | 3 | 4>
+export type SpacingArgs = [] | FixedSizeArray<SpacingValue, 1 | 2 | 3 | 4>
 
-export type Spacing = (...values: SpacingArgLength) => string
+export type Spacing = (...values: SpacingArgs) => string

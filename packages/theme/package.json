@@ -4,6 +4,9 @@
 	"main": "lib/index.js",
 	"types": "lib/index.d.ts",
 	"module": "src/index.ts",
+	"files": [
+		"lib/**/*"
+	  ],
 	"scripts": {
 		"test": "cd ../../ && lerna exec --scope=@pepe-ui/theme -- jest --colors"
 	}  

@@ -1,4 +1,4 @@
-import type { Spacing, SpacingValue } from '../spacing'
+import type { Spacing, SpacingValue, SpacingArgs } from '../spacing'
 
 type BoxProperty = 'margin' | 'padding'
 
@@ -8,10 +8,13 @@ type AxisProperty = Partial<Record<'x' | 'y', SpacingValue>>
 
 type SingleProperty = Partial<Record<'left' | 'top' | 'right' | 'bottom', SpacingValue>>
 
-type BoxPropertyValue = NotEmpty<AxisProperty> | NotEmpty<SingleProperty> | number
+export type BoxPropertyValue = NotEmpty<AxisProperty> | NotEmpty<SingleProperty> | SpacingValue
 
-export type BoxPropertyTransformer = (properties: BoxPropertyValue) => string
+export type BoxPropertyTransformer = (
+  value: BoxPropertyValue | SpacingValue,
+  ...rest: SpacingArgs
+) => string
 
 export type GenerateBoxProperty = (
   property: BoxProperty
-) => (spacing: Spacing) => (value: BoxPropertyValue) => string
+) => (spacing: Spacing) => BoxPropertyTransformer

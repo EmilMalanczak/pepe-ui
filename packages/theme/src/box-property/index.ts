@@ -1,1 +1,1 @@
-export { generateMargin, generatePadding } from './box-property'
+export { generateMargin, generatePadding, padding, margin } from './box-property'

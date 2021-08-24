@@ -1,0 +1,12 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+      "module": "commonjs",
+      "outDir": "lib",
+      "strict": true,
+      "target": "es6"
+    },
+    "compileOnSave": true,
+    "include": ["src"]
+  }
+   
