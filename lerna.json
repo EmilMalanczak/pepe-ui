@@ -5,10 +5,15 @@
 	"version": "independent",
 	"command": {
 		"publish": {
-		  "registry": "http://localhost:4873/"
+		  "registry": "http://localhost:4873/",
+		  "conventionalCommits": true
 		},
 		"version": {
 			"message": "chore: 🤖 publish"
-		  }
-	  }
+		}
+	},
+	"ignoreChanges": [
+		"**/*.md",
+		"**/*.test.{js,ts,jsx,tsx}"
+	]
 }

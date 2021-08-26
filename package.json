@@ -71,5 +71,8 @@
   "commitizen": {
    "path": "git-cz"
   }
+ },
+ "dependencies": {
+  "npm-cli-login": "^0.1.1"
  }
 }
