@@ -1,10 +1,14 @@
+import { spacing as defaultSpacing, SpacingArgs } from '../spacing'
 import type { BoxPropertyTransformer, GenerateBoxProperty } from './box-property.types'
 
 const generateBoxProperty: GenerateBoxProperty = (property) => (spacing) => {
-  const transform: BoxPropertyTransformer = (value) => {
-    if (typeof value === 'number') {
-      return `
-          ${property}: ${spacing(value)}; 
+  const transform: BoxPropertyTransformer = (value, ...rest) => {
+    if (typeof value === 'number' || typeof value === 'string') {
+      const spacingArgs = [value, ...rest] as SpacingArgs
+      // TODO: unexpected typing issue - probably bug comes
+      // from FixedArraySize type
+      return ` 
+          ${property}: ${spacing(...(spacingArgs as any))};  
         `
     }
 
@@ -12,7 +16,7 @@ const generateBoxProperty: GenerateBoxProperty = (property) => (spacing) => {
       const { x, y } = value
 
       return `
-          ${property}: ${spacing(x ?? 0, y ?? 0)};
+          ${property}: ${spacing(y ?? 0, x ?? 0)};
         `
     }
 
@@ -20,15 +24,18 @@ const generateBoxProperty: GenerateBoxProperty = (property) => (spacing) => {
       (css, [direction, propertyValue]) =>
         `
           ${css}
-          ${property}-${direction}: ${spacing(propertyValue)}  
+          ${property}-${direction}: ${spacing(propertyValue)}; 
         `,
       ''
     )
   }
 
-  return (properties) => transform(properties)
+  return transform
 }
 
 export const generatePadding = generateBoxProperty('padding')
 
 export const generateMargin = generateBoxProperty('margin')
+
+export const padding = generatePadding(defaultSpacing)
+export const margin = generateMargin(defaultSpacing)

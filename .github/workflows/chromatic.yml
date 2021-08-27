@@ -1,6 +1,12 @@
 # Name of our action
 name: 'Chromatic'
-on: push
+on: 
+  push:
+    branches:
+      - master
+    paths: 
+    - 'packages/**'
+    - '!packages/docs'
 
 jobs:
   deployment:
