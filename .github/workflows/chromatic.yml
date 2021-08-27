@@ -1,7 +1,10 @@
 # Name of our action
 name: 'Chromatic'
 on: 
-  push:
+  pull_request:
+    type:
+      - opened
+      - edited
     branches:
       - master
     paths: 
