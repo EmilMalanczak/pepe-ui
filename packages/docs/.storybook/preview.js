@@ -1,24 +1,24 @@
 // import { GlobalStyle } from '@pepe-ui/styles'
-import theme from "./theme";
+import theme from './theme'
 
 export const parameters = {
-  actions: { 
-    argTypesRegex: "^on[A-Z].*"
+  actions: {
+    argTypesRegex: '^on[A-Z].*'
   },
   a11y: {
     element: '#root',
-    manual: false,
+    manual: false
   },
   docs: {
-    theme,
-  },
+    theme
+  }
 }
 
 export const decorators = [
-  Story => (
+  (Story) => (
     <>
       {/* <GlobalStyle /> */}
       <Story />
     </>
-  ),
-];
+  )
+]

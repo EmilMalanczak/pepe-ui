@@ -6,7 +6,6 @@ module.exports = {
     'stylelint-config-styled-components'
   ],
   plugins: ['stylelint-order'],
-  processors: ['stylelint-processor-styled-components'],
   rules: {
     'indentation': 2,
     'string-quotes': 'single',

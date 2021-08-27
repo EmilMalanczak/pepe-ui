@@ -53,7 +53,7 @@ module.exports = {
     'no-undef': 'off',
     'import/no-extraneous-dependencies': 'off'
   },
-  ignorePatterns: ['packages/**/lib'],
+  ignorePatterns: ['packages/**/lib', 'packages/**/dist', 'node_modules'],
   settings: {
     'react': {
       version: 'detect'
