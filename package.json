@@ -9,7 +9,7 @@
     "build:types": "lerna exec -- tsc --pretty -declarationDir lib",
     "build": "lerna exec --parallel --ignore=@pepe-ui/docs -- babel --root-mode upward --extensions .ts,.tsx src -d lib --no-comments",
     "postbuild": "yarn build:types",
-    "test:ci": "lerna run test --since master --no-bail",
+    "test:ci": "lerna run test --since origin/master --no-bail",
     "test:watch": "jest --watch",
     "test": "jest",
     "commit": "git add . && npx git-cz",
