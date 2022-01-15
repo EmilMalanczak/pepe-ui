@@ -1,13 +1,14 @@
 {
-	"name": "@pepe-ui/theme",
-	"version": "1.0.0",
-	"main": "lib/index.js",
-	"types": "lib/index.d.ts",
-	"module": "src/index.ts",
-	"files": [
-		"lib/**/*"
-	  ],
-	"scripts": {
-		"test": "cd ../../ && lerna exec --scope=@pepe-ui/theme -- jest --colors"
-	}  
-} 
+  "name": "@pepe-ui/theme",
+  "license": "MIT",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "module": "src/index.ts",
+  "scripts": {
+    "test": "jest --colors --passWithNoTests"
+  },
+  "files": [
+    "lib"
+  ]
+}

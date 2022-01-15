@@ -1,6 +1,6 @@
 {
   "name": "@pepe-ui/docs",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
   "private": "true",
@@ -11,7 +11,7 @@
     "build-storybook": "yarn build && yarn build:docs"
   },
   "dependencies": {
-    "@pepe-ui/theme": "^1.0.0",
+    "@pepe-ui/theme": "0.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "styled-components": "^5.3.0"
@@ -22,4 +22,3 @@
     "@storybook/react": "^6.3.7"
   }
 }
- 
